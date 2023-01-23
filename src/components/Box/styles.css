@@ -1,0 +1,9 @@
+.box{
+    display: flex;
+    justify-content: center;
+    
+    border: solid 2px var(--Contorno);
+    border-radius: 5px;
+
+    color: var(--Fonte)
+}

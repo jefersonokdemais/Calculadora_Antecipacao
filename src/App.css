@@ -1,0 +1,22 @@
+:root{
+  --Fundo:#F5F7FA;
+  --Branco: #FFF;
+  --Contorno: #DEE5EB;
+  --Preto: #121214; 
+  --Verde: #3FE864;
+  --Azul: #6691c8;
+  --Fonte: #6f6f6f;
+  --Descricao: #bcbcbca5;
+  --Formulario: #F7F9FA;
+}
+
+.App {
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: linear-gradient(to bottom right, var(--Fundo), rgba(0, 0, 0, 0.374));
+}
