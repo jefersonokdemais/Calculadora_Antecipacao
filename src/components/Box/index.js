@@ -7,26 +7,34 @@ import api from "../../services/api"
 
 export function Box(){
 
-    const [amount, setAmount] = useState();
-    const [mdr, setMdr] = useState();
-    const [installments, setInstallments] = useState();
+    const [amount, setAmount] = useState(1000);
+    const [mdr, setMdr] = useState(0);
+    const [installments, setInstallments] = useState(1);
+    const [response, setResponse] = useState([])
 
     useEffect(() => {
         api
-          .post("/",{
+          .post("",{
+            amount: amount,
+            mdr: mdr,
+            installments: installments
+
      })
-          .then((response) => 
-            setAmount(response.data)
+          .then((response) => {
+            setResponse(response.data)
+          }
           )
-          .catch((err) => {
-            console.error("ops! ocorreu um erro" + err);
-          });
-      }, []);
+          .catch(err=> console.error(err))
+      }, [amount, mdr, installments]);
 
     return (
         <div className="box"> 
-            <FormInput/>       
-            <ResponseOutput/>    
+            <FormInput 
+              setAmount={setAmount}
+              setMdr={setMdr}
+              setInstallments={setInstallments}
+            />       
+            <ResponseOutput response={response}/>    
         </div>
     )        
 }
